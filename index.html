@@ -6,72 +6,33 @@
     <meta name="description" content="Alex Sulimovskyi — Manual QA Engineer based in Odesa, Ukraine." />
     <title>Alex Sulimovskyi — Manual QA Engineer</title>
     <style>
-      :root { --bg:#0b1020; --panel:#121a30; --line:#253353; --text:#eef3ff; --muted:#a9b6d1; --accent:#58d6c5; --accent-2:#7c92ff; }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; color:var(--text); background:radial-gradient(circle at 84% -4%,#25376c 0,transparent 29rem),var(--bg); font:16px/1.6 Inter,Segoe UI,Arial,sans-serif; }
-      a { color:inherit; }
-      .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
-      nav { display:flex; align-items:center; justify-content:space-between; padding:23px 0; }
-      .brand { font-weight:750; letter-spacing:.03em; text-decoration:none; }
-      .brand span { color:var(--accent); }
-      .nav-link { color:var(--muted); font-size:.92rem; text-decoration:none; }
-      .nav-link:hover { color:var(--text); }
-      .hero { min-height:610px; display:grid; grid-template-columns:1.25fr .75fr; align-items:center; gap:60px; padding:76px 0 90px; }
-      .eyebrow { color:var(--accent); font-size:.82rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-      h1 { max-width:780px; margin:12px 0 19px; font-size:clamp(2.75rem,7vw,5.7rem); letter-spacing:-.065em; line-height:.96; }
-      h1 em { color:var(--accent); font-style:normal; }
-      .lead { max-width:630px; color:var(--muted); font-size:1.14rem; }
-      .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:31px; }
-      .button { border:1px solid var(--accent); border-radius:9px; padding:11px 17px; color:#06131a; background:var(--accent); font-weight:700; text-decoration:none; }
-      .button.secondary { color:var(--text); background:transparent; border-color:var(--line); }
-      .stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-      .stat { min-height:135px; padding:19px; border:1px solid var(--line); border-radius:14px; background:linear-gradient(145deg,rgba(22,32,59,.96),rgba(17,25,46,.8)); }
-      .stat strong { display:block; color:var(--accent); font-size:1.55rem; }
-      .stat span { color:var(--muted); font-size:.87rem; }
-      section { padding:84px 0; border-top:1px solid rgba(37,51,83,.85); }
-      .label { color:var(--accent); font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
-      h2 { margin:7px 0 26px; font-size:clamp(2rem,4vw,3.1rem); letter-spacing:-.045em; line-height:1.08; }
-      .about { display:grid; grid-template-columns:.9fr 1.1fr; gap:62px; }
-      .about p { margin:0; color:var(--muted); font-size:1.08rem; }
-      .details { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-      .detail { padding:16px; border:1px solid var(--line); border-radius:11px; background:rgba(18,26,48,.7); }
-      .detail b { display:block; font-size:.8rem; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
-      .detail span { color:var(--muted); font-size:.92rem; }
-      .timeline { max-width:850px; }
-      .role { display:grid; grid-template-columns:160px 1fr; gap:32px; padding:0 0 42px; position:relative; }
-      .role:not(:last-child):before { content:""; position:absolute; left:6px; top:27px; bottom:0; width:1px; background:var(--line); }
-      .date { color:var(--accent); font-size:.9rem; font-weight:700; padding-left:23px; }
-      .date:before { content:""; position:absolute; left:0; top:6px; width:11px; height:11px; border:2px solid var(--accent); border-radius:50%; background:var(--bg); }
-      h3 { margin:0 0 2px; font-size:1.27rem; } .company { margin:0 0 13px; color:var(--accent-2); font-weight:600; }
-      .role p { margin:0; color:var(--muted); } .role ul { margin:13px 0 0; padding-left:19px; color:var(--muted); }
-      .stack { display:flex; flex-wrap:wrap; gap:10px; }
-      .tag { border:1px solid var(--line); border-radius:100px; padding:8px 12px; color:#d8e1f8; background:rgba(18,26,48,.72); font-size:.92rem; }
-      .testing { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-      .card { padding:22px; border:1px solid var(--line); border-radius:13px; background:rgba(18,26,48,.72); }
-      .card strong { color:var(--accent); } .card p { margin:9px 0 0; color:var(--muted); font-size:.94rem; }
-      .ai { display:grid; grid-template-columns:.9fr 1.1fr; gap:52px; align-items:start; }
-      .ai p { margin:0; color:var(--muted); font-size:1.05rem; }
-      .ai-list { display:grid; gap:11px; margin:0; padding:0; list-style:none; }
-      .ai-list li { padding:13px 15px; border-left:2px solid var(--accent); background:rgba(18,26,48,.72); color:#d7e0f4; }
-      .contact { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; }
-      .contact h2 { margin-bottom:0; } .contact-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px; }
-      .contact-links a { border:1px solid var(--line); border-radius:8px; padding:10px 13px; color:var(--muted); text-decoration:none; }
-      .contact-links a:hover { color:var(--accent); border-color:var(--accent); }
-      footer { padding:24px 0 35px; color:#71809f; font-size:.85rem; }
+      :root { --ink:#121826; --paper:#f4f5f7; --surface:#fff; --line:#d8dde6; --muted:#627086; --accent:#254ede; --soft:#e9edff; }
+      * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.6 Inter,Segoe UI,Arial,sans-serif; } a { color:inherit; }
+      .wrap { width:min(1120px,calc(100% - 48px)); margin:auto; } nav { display:flex; align-items:center; justify-content:space-between; padding:22px 0; border-bottom:1px solid var(--line); }
+      .brand { font-weight:800; letter-spacing:-.03em; text-decoration:none; } .brand span,.eyebrow,.label { color:var(--accent); } .nav-link { color:var(--muted); font-size:.9rem; text-decoration:none; } .nav-link:hover { color:var(--accent); }
+      .hero { min-height:560px; display:grid; grid-template-columns:1.4fr .6fr; align-items:end; gap:70px; padding:92px 0 68px; } .eyebrow,.label { font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+      h1 { max-width:720px; margin:12px 0 18px; font-size:clamp(3.25rem,7vw,6.25rem); letter-spacing:-.075em; line-height:.89; } h1 em { display:block; color:var(--accent); font-style:normal; font-size:.43em; letter-spacing:-.035em; margin-top:18px; }
+      .lead { max-width:610px; margin:0; color:var(--muted); font-size:1.08rem; } .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; } .button { border:1px solid var(--ink); padding:11px 16px; background:var(--ink); color:#fff; font-weight:700; text-decoration:none; } .button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+      .stats { display:grid; border-top:2px solid var(--ink); } .stat { min-height:94px; padding:13px 0; border-bottom:1px solid var(--line); } .stat strong { display:block; font-size:1.35rem; letter-spacing:-.04em; } .stat span { color:var(--muted); font-size:.82rem; }
+      section { padding:78px 0; border-top:1px solid var(--line); } h2 { max-width:720px; margin:8px 0 29px; font-size:clamp(2.1rem,4vw,3.35rem); letter-spacing:-.06em; line-height:1; }
+      .about { display:grid; grid-template-columns:.9fr 1.1fr; gap:72px; } .about p,.role p,.ai p { margin:0; color:var(--muted); font-size:1.04rem; } .details { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); } .detail { padding:15px 12px 15px 0; border-bottom:1px solid var(--line); } .detail:nth-child(odd) { border-right:1px solid var(--line); padding-right:14px; } .detail:nth-child(even) { padding-left:14px; } .detail b { display:block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; } .detail span { color:var(--muted); font-size:.9rem; }
+      .timeline { max-width:920px; } .role { display:grid; grid-template-columns:185px 1fr; gap:34px; padding:28px 0; border-top:1px solid var(--line); } .role:last-child { border-bottom:1px solid var(--line); } .date { color:var(--muted); font-size:.87rem; font-weight:650; } h3 { margin:0 0 3px; font-size:1.27rem; letter-spacing:-.025em; } .company { margin:0 0 13px; color:var(--accent); font-weight:700; } .role ul { margin:13px 0 0; padding-left:19px; color:var(--muted); }
+      .stack { display:flex; flex-wrap:wrap; gap:8px; } .tag { border:1px solid var(--line); padding:7px 11px; background:var(--surface); font-size:.9rem; } .testing { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-right:0; } .card { min-height:190px; padding:20px; border-right:1px solid var(--line); background:var(--surface); } .card strong { color:var(--accent); font-size:.84rem; } .card p { margin:10px 0 0; color:var(--muted); font-size:.92rem; }
+      .ai { display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:start; } .ai-list { display:grid; gap:0; margin:0; padding:0; list-style:none; border-top:1px solid var(--line); } .ai-list li { padding:14px 0; border-bottom:1px solid var(--line); } .ai-list li:before { content:"↗"; color:var(--accent); margin-right:11px; }
+      .contact { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; } .contact h2 { margin-bottom:0; } .contact-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; } .contact-links a { border-bottom:1px solid var(--ink); padding:7px 0; margin-left:15px; text-decoration:none; } .contact-links a:hover { color:var(--accent); border-color:var(--accent); } footer { padding:23px 0 35px; color:var(--muted); font-size:.84rem; }
       .js-reveal .reveal { opacity:0; transform:translateY(22px); transition:opacity .68s ease,transform .68s cubic-bezier(.22,1,.36,1); transition-delay:var(--reveal-delay,0ms); }
       .js-reveal .reveal.is-visible { opacity:1; transform:translateY(0); }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .js-reveal .reveal { opacity:1; transform:none; transition:none; } }
-      @media (max-width:760px) { .wrap { width:min(100% - 32px,1120px); } nav { padding:17px 0; } .hero,.about,.ai,.contact { grid-template-columns:1fr; gap:32px; } .hero { min-height:0; padding:65px 0; } .stats { max-width:440px; } section { padding:60px 0; } .role { grid-template-columns:1fr; gap:8px; } .date { padding-left:23px; } .role:not(:last-child):before { top:25px; } .testing { grid-template-columns:1fr 1fr; } .contact-links { justify-content:flex-start; } }
-      @media (max-width:430px) { .stats,.details,.testing { grid-template-columns:1fr; } h1 { font-size:3rem; } }
+      @media (max-width:760px) { .wrap { width:min(100% - 32px,1120px); } nav { padding:17px 0; } .hero,.about,.ai,.contact { grid-template-columns:1fr; gap:34px; } .hero { min-height:0; padding:68px 0 52px; } .stats { grid-template-columns:repeat(2,1fr); border-bottom:1px solid var(--line); } .stat { padding-right:12px; } .stat:nth-child(odd) { border-right:1px solid var(--line); } section { padding:58px 0; } .role { grid-template-columns:1fr; gap:8px; } .testing { grid-template-columns:1fr 1fr; } .contact-links { justify-content:flex-start; } .contact-links a { margin:0 15px 0 0; } }
+      @media (max-width:430px) { .stats,.details,.testing { grid-template-columns:1fr; } .stat:nth-child(odd),.detail:nth-child(odd) { border-right:0; } .detail:nth-child(even) { padding-left:0; } .card { border-bottom:1px solid var(--line); } h1 { font-size:3.45rem; } }
     </style>
   </head>
   <body>
     <div class="wrap"><nav><a class="brand" href="#top">ALEX<span>/QA</span></a><a class="nav-link" href="#contacts">Get in touch ↓</a></nav></div>
     <main id="top" class="wrap">
       <section class="hero">
-        <div><div class="eyebrow">Manual QA Engineer · Odesa, Ukraine</div><h1>Quality is built through <em>careful</em> testing.</h1><p class="lead">Alex Sulimovskyi is a Manual QA Engineer with around three years of QA-related experience across web applications, POS software, backend services, REST APIs and data validation.</p><div class="actions"><a class="button" href="mailto:al3xfibo@gmail.com">Email me</a><a class="button secondary" href="#experience">View experience</a></div></div>
-        <div class="stats"><div class="stat"><strong>~3 years</strong><span>QA-related experience</span></div><div class="stat"><strong>Web + POS</strong><span>Product focus</span></div><div class="stat"><strong>API + SQL</strong><span>Validation and investigation</span></div><div class="stat"><strong>B1</strong><span>English</span></div></div>
+        <div><div class="eyebrow">Manual QA Engineer · Odesa, Ukraine</div><h1>Alex<br />Sulimovskyi<em>Manual QA Engineer</em></h1><p class="lead">Around three years of QA-related experience across web applications, POS software, backend services, REST APIs and data validation.</p><div class="actions"><a class="button" href="mailto:al3xfibo@gmail.com">Email me</a><a class="button secondary" href="#experience">View experience</a></div></div>
+        <div class="stats"><div class="stat"><strong>~3 years</strong><span>QA-related experience</span></div><div class="stat"><strong>Web + POS</strong><span>Product focus</span></div><div class="stat"><strong>API + SQL</strong><span>Validation and investigation</span></div><div class="stat"><strong>B2</strong><span>English</span></div></div>
       </section>
       <section id="about" class="about reveal" style="--reveal-delay:40ms"><div><div class="label">About</div><h2>Manual testing with a support-minded perspective.</h2></div><div><p>I combine structured QA practice with a technical support background. That means looking beyond a visible defect: reproducing it clearly, checking requests and data, reading logs, and helping the team get to a verifiable fix.</p><div class="details" style="margin-top:25px"><div class="detail"><b>Focus</b><span>Web, POS, backend, REST API</span></div><div class="detail"><b>Approach</b><span>Risk-aware and evidence-based</span></div><div class="detail"><b>Location</b><span>Odesa, Ukraine</span></div><div class="detail"><b>Background</b><span>Technical Support</span></div></div></div></section>
       <section id="experience" class="reveal"><div class="label">Experience</div><h2>Product quality and technical problem solving.</h2><div class="timeline"><article class="role"><div class="date">Feb 2024 — Jul 2026</div><div><h3>QA Engineer</h3><p class="company">Nayax Retail LTD</p><p>Manual testing of web applications, POS software, backend services and REST APIs.</p><ul><li>Functional, regression, smoke and integration testing</li><li>Test cases and clear bug reports</li><li>SQL and database validation, DevTools, Swagger and log analysis</li><li>Verification of fixes and collaboration around product quality</li></ul></div></article><article class="role"><div class="date">Jul 2021 — Jan 2024</div><div><h3>Technical Support Specialist</h3><p class="company">Nayax Retail LTD</p><p>Support for retail/POS software and hardware, including incident investigation, log and database analysis, technical cases for engineering, and POS installation/configuration.</p></div></article><article class="role"><div class="date">Sep 2020 — Jun 2021</div><div><h3>Technical Support</h3><p class="company">KTS Monitoring</p></div></article></div></section>
