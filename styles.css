@@ -442,22 +442,41 @@ section {
 }
 
 .recommendation {
-  display: grid;
-  grid-template-columns: 0.58fr 1.42fr;
-  align-items: start;
-  gap: 64px;
+  display: block;
 }
 
 .recommendation h2 {
   margin-bottom: 0;
 }
 
+.recommendation-heading {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .recommendation-card {
   margin: 0;
   padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: rgba(7, 25, 11, 0.78);
   border: 1px solid var(--line);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.recommendation-card-secondary {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  align-items: end;
+  gap: 34px;
 }
 
 .recommendation-card blockquote {
@@ -505,6 +524,35 @@ section {
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.4;
+}
+
+.recommendation-source,
+.recommendation-all {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.recommendation-source {
+  display: inline-block;
+  margin-top: 9px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.recommendation-source:hover,
+.recommendation-source:focus-visible,
+.recommendation-all:hover,
+.recommendation-all:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.recommendation-all {
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .ai {
@@ -726,12 +774,26 @@ footer {
   }
 
   .recommendation {
+    display: block;
+  }
+
+  .recommendation-list {
     grid-template-columns: 1fr;
-    gap: 26px;
   }
 
   .recommendation-card {
     padding: 22px;
+  }
+
+  .recommendation-card-secondary {
+    grid-column: auto;
+    display: flex;
+    gap: 0;
+  }
+
+  .recommendation-all {
+    grid-column: auto;
+    justify-self: start;
   }
 
   .ai-case-grid {
